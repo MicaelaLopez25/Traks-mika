@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/genero.css" />
+    <title>Spotify</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>Musica</h1>
+
+    <table class="table">
+      <tr>
+        <th class="th">canciones</th>
+        <th>artistas</th>
+      </tr>
+      {% for m in musica %}
+      <tr class="">
+        <td>{{ m ['cancion'] }}</td>
+        <td>{{ m['artista'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/genero.css">
+    <title> Spotify </title>
+  </head>
+  <body class="body">
+        <h1> Generos</h1>
+            <ul class="body">
+            {% for genero in generos %}
+             <li>{{ genero ['Name']}}</li>
+             {% endfor %}
+            </ul>
+  <body>
+</html>

@@ -1,0 +1,14 @@
+.body {
+  background-color: rgb(193, 139, 243);
+}
+.table {
+  border-collapse: separate;
+  border-spacing: 5px;
+  background: #7c7c7c url("gradient.gif") bottom left repeat-x;
+  color: aquamarine;
+}
+td,
+th {
+  background: #fff;
+  color: #000;
+}
