@@ -10,14 +10,17 @@
   <body>
     <h1>Musica</h1>
 
-    <table class="table">
+    <table class="tablee">
       <tr>
         <th class="th">canciones</th>
         <th>artistas</th>
       </tr>
       {% for m in musica %}
       <tr class="">
-        <td>{{ m ['cancion'] }}</td>
+        <a href="detalle_album.html">
+          <td>{{ m ['cancion'] }}</td>
+        </a>
+
         <td>{{ m['artista'] }}</td>
       </tr>
       {% endfor %}
