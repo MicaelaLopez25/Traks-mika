@@ -8,8 +8,6 @@
     <style></style>
   </head>
   <body>
-    <h1>Musica</h1>
-
     <table class="tablee">
       <tr>
         <th class="th">canciones</th>
@@ -17,9 +15,11 @@
       </tr>
       {% for m in musica %}
       <tr class="">
-        <a href="detalle_album.html">
-          <td>{{ m ['cancion'] }}</td>
-        </a>
+        <td>
+          <a href="{{ url_for('detalle_album', id=m[artistId]) }}"
+            >{{ m ['cancion'] }}</a
+          >
+        </td>
 
         <td>{{ m['artista'] }}</td>
       </tr>

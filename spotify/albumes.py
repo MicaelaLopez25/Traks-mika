@@ -2,6 +2,17 @@ from flask import Blueprint, render_template
 from . import db 
 bp = Blueprint('alb', __name__, url_prefix='/album/')
 
+@bp.route('/')
+def album ():
+   consulta = """
+             SELECT Title from albums
+	         ORDER by Title ASC ;    
+	   """
+   con = db.get_db()
+   res = con.execute(consulta)
+   lista_nombre_albumes = res.fetchall()
+   pagina = render_template('detalle_album.html', musica=lista_nombre_albumes)
+   return pagina
 
 @bp.route('/<int:id>')
 def detalle(id):
