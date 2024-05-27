@@ -5,7 +5,7 @@ bp = Blueprint('alb', __name__, url_prefix='/album/')
 @bp.route('/')
 def album ():
    consulta = """
-             SELECT Title from albums
+             SELECT Title, AlbumId from albums
 	         ORDER by Title ASC ;    
 	   """
    con = db.get_db()
@@ -18,20 +18,22 @@ def album ():
 def detalle(id):
    con = db.get_db()
    consulta1= """
-         SELECT name FROM artists WHERE ArtistId = ?;  
-   """
+         SELECT name, a.AlbumId FROM artists ar JOIN albums a ON a.ArtistId = ar.ArtistId
+         WHERE ar.ArtistId = ?;  
+      """
    consulta2 = """
-         SELECT a.Title FROM artists n 
-        JOIN albums a ON  n.ArtistId = a.ArtistId
-        WHERE n.ArtistId = ?;
+      SELECT t.name, t.AlbumId as idAl FROM tracks t
+      JOIN albums a ON  t.AlbumId = a.AlbumId
+      JOIN artists ar ON a.ArtistId = ar.ArtistId
+      WHERE t.AlbumId = ?;
         """
 
    res = con.execute(consulta1, (id,))
-   artista = res.fetchone()
-   res = con.execute(consulta2, (id,))
-   lista_albumes = res.fetchall()
+   art = res.fetchone()
+   res2 = con.execute(consulta2, (id,))
+   lista_albumes = res2.fetchall()
    pagina = render_template('detalle_album.html',
-                         artistas = artista ,
+                         artis = art ,
                          albumes = lista_albumes )                                                            
 
    return pagina

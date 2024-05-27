@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,13 +6,17 @@
     <title>Document</title>
   </head>
   <body class="body">
-    <h1> {{artista['Name']}} </h1>
-    <h2> Albumes </h2>
-        <ul class="body">
-        {% for a in albumes %}
-          <li>{{ a ['Title']}}</li>
-      
-        {% endfor %}
-      </ul>
-<body>
+    <h2>Artista</h2>
+    <h1>{{artista['Name']}}</h1>
+
+    <ul class="body">
+      {% for al in albumes %}
+      <li>
+        <a href="{{ url_for('alb.detalle', id=al['AlbumId']) }}"
+          >{{ al['title'] }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
 </html>
