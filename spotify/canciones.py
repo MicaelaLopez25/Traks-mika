@@ -38,5 +38,3 @@ def detalle(id):
                          albumes = lista_albumes )                                                            
 
    return pagina
-
-*/ me falta arreglar esto a 

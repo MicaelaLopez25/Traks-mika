@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="body">
+    <h1> {{artista['Name']}} </h1>
+    <h2> Albumes </h2>
+        <ul class="body">
+        {% for a in albumes %}
+          <li>{{ a ['Title']}}</li>
+      
+        {% endfor %}
+      </ul>
+<body>
+</html>

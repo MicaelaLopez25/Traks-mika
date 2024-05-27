@@ -10,18 +10,18 @@
   <body>
     <table class="tablee">
       <tr>
-        <th class="th">canciones</th>
-        <th>artistas</th>
+        <th class="th">cancion</th>
+        <th>artista</th>
       </tr>
       {% for m in musica %}
       <tr class="">
-        <td>
-          <a href="{{ url_for('detalle_album', id=m[artistId]) }}"
-            >{{ m ['cancion'] }}</a
-          >
-        </td>
+        <td>{{ m ['cancion'] }}</td>
 
-        <td>{{ m['artista'] }}</td>
+        <td>
+          <a href="{{ url_for('artista.detalle', id=m['idA']) }}"
+            >{{ m['artista'] }}
+          </a>
+        </td>
       </tr>
       {% endfor %}
     </table>
