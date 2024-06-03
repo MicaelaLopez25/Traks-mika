@@ -18,22 +18,20 @@ def album ():
 def detalle(id):
    con = db.get_db()
    consulta1= """
-         SELECT name, a.AlbumId FROM artists ar JOIN albums a ON a.ArtistId = ar.ArtistId
-         WHERE ar.ArtistId = ?;  
+         SELECT title FROM albums
+         WHERE albumId = ?;  
       """
    consulta2 = """
-      SELECT t.name, t.AlbumId as idAl FROM tracks t
-      JOIN albums a ON  t.AlbumId = a.AlbumId
-      JOIN artists ar ON a.ArtistId = ar.ArtistId
+      SELECT t.name, t.trackId FROM tracks t
       WHERE t.AlbumId = ?;
         """
 
    res = con.execute(consulta1, (id,))
-   art = res.fetchone()
+   album = res.fetchone()
    res2 = con.execute(consulta2, (id,))
-   lista_albumes = res2.fetchall()
+   lista_canciones = res2.fetchall()
    pagina = render_template('detalle_album.html',
-                         artis = art ,
-                         albumes = lista_albumes )                                                            
+                         album = album ,
+                         canciones = lista_canciones )                                                            
 
    return pagina

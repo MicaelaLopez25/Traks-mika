@@ -6,14 +6,13 @@
     <title>Document</title>
   </head>
   <body class="body">
-    <h1> Albumes </h1>
-    <h2>canciones </h2>
-        <ul class="body">
-        {% for a in albums %}
-          <li>{{ a ['name']}}</li>
-    
-        {% endfor %}
-       </ul>
- <body>
+     <h1>{{album['title']}}</h1>
+
+    <ul class="body">
+    {% for c in canciones %}
+     <li>{{ c ['name']}}</li>
+     {% endfor %}
+    </ul>
+    <body>
  </html>
 
