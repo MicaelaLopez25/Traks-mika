@@ -7,17 +7,21 @@
     <title>Spotify</title>
     <style></style>
   </head>
-  <body>
-    <table class="tablee">
+  <body class="body">
+    <table class="table">
       <tr>
-        <th class="th">cancion</th>
-        <th>artista</th>
+        <th class="th2">cancion</th>
+        <th class="th2">artista</th>
       </tr>
       {% for m in musica %}
-      <tr class="">
-        <td>{{ m ['cancion'] }}</td>
+      <tr class="tr2">
+        <td class="td3">
+          <a href="{{ url_for('cancion.detalle', id=m['TrackId']) }}">
+            {{ m ['cancion'] }}
+          </a>
+        </td>
 
-        <td>
+        <td class="td2">
           <a href="{{ url_for('artista.detalle', id=m['idA']) }}"
             >{{ m['artista'] }}
           </a>

@@ -3,29 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cancioen</title>
+    <link rel="stylesheet" href="/static/genero.css" />
+    <title>canciones</title>
   </head>
   <body class="body">
     <h1>{{cancion['t.Name']}}</h1>
 
-    <table>
+    <table class="table col">
       <tr>
-        <td>compositor/es</td>
-        <td>Bytes</td>
-        <td>cancion</td>
-        <td>duracion milisegundos</td>
-        <td>Genero</td>
+        <th class="th2">compositor/es</th>
+        <th class="th2">Bytes</th>
+        <th class="th2">cancion</th>
+        <th class="th2">duracion milisegundos</th>
+        <th class="th2">Genero</th>
+      </tr>
+
+      <tr class="tr:hover td">
+        <td class="td2">{{ cancion ['compositor']}}</td>
+        <td class="td2">{{ cancion ['Bytes']}}</td>
+        <td class="td2">{{ cancion ['cancion']}}</td>
+        <td class="td2">{{ cancion ['milisegundos']}}</td>
+        <td class="td2">{{ cancion ['genero']}}</td>
       </tr>
     </table>
-
-    <tr>
-      <td>{{ cancion ['compositor']}}</td>
-    </tr>
-    <tr>
-      <td>{{ cancion ['Bytes']}}</td>
-    </tr>
-    <td>{{ cancion ['cancion']}}</td>
-    <td>{{ cancion ['milisegundos']}}</td>
-    <td>{{ cancion ['genero']}}</td>
   </body>
 </html>

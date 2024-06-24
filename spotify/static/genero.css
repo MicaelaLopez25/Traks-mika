@@ -1,14 +1,54 @@
 .body {
-  background-color: rgb(193, 139, 243);
+  background-color: rgb(210, 201, 236);
 }
 td,
 th {
   background: #fff;
   color: #000;
 }
-.tablee {
-  border-collapse: separate;
-  border-spacing: 4px;
-  background: #b479f7 url("gradient.gif") bottom left repeat-x;
-  color: #bb6161;
+.table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 15px;
+  margin: 45px;
+  width: 1200px;
+  text-align: center;
+  border-collapse: collapse;
+}
+.table2 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 12px;
+  margin: 45px;
+  width: 480px;
+  text-align: left;
+  border-collapse: collapse;
+}
+.th2 {
+  font-size: 13px;
+  font-weight: normal;
+  padding: 8px;
+  background: #b2adf8;
+  border-top: 4px solid #b2adf8;
+  border-bottom: 1px solid #fff;
+  color: #039;
+}
+.td2 {
+  padding: 8px;
+  background: #f5e8ff;
+  border-bottom: 1px solid #fff;
+  color: #669;
+  border-top: 1px solid transparent;
+}
+.td3 {
+  padding: 8px;
+  background: #f0e8ff;
+  border-bottom: 1px solid #fff;
+  color: rgb(124, 102, 153);
+  border-top: 1px solid transparent;
+}
+.tr:hover td {
+  background: #d0dafd;
+  color: rgb(97, 97, 233);
+}
+.col {
+  border: rgb(116, 74, 170) 4px solid;
 }

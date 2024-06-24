@@ -3,20 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/genero.css" />
     <title>Document</title>
   </head>
   <body class="body">
-    <h2>Artista</h2>
-    <h1>{{artista['Name']}}</h1>
-
-    <ul class="body">
+    <table class="table">
+      <h2>Artista</h2>
+      <tr class="tr2">
+        {{artista['Name']}}
+      </tr>
       {% for al in albumes %}
-      <li>
+      <th class="th2">
         <a href="{{ url_for('alb.detalle', id=al['AlbumId']) }}"
           >{{ al['title'] }}</a
         >
-      </li>
-      {% endfor %}
-    </ul>
+        {% endfor %}
+      </th>
+    </table>
   </body>
 </html>
