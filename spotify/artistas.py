@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for
 from . import db 
 bp = Blueprint('artista', __name__, url_prefix='/artistas/')
 
@@ -35,3 +35,19 @@ def detalle(id):
                         albumes = lista_albumes )                                                            
 
    return pagina
+
+@bp.route('/new', methods=('GET','POST'))
+def nuevo():
+    if request.method == 'POST':
+      name = request.form['name']
+
+      con = db.get_db()
+      consulta = """ INSERT INTO artists(name)
+                  VALUES  (?) """
+      
+      con.execute(consulta, (name))
+      con.commit()
+      return redirect(url_for('artista.artistas'))
+    else:
+       pagina = render_template('nuevo_artista.html')
+       return pagina
